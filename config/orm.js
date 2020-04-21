@@ -1,4 +1,4 @@
-var connection = require("connection.js");
+var connection = require("../config/connection.js");
 
 
 // TODO- Write methods used to retrieve and store data in the database
