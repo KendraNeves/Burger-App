@@ -1,7 +1,7 @@
 var connection = require("connection.js");
 
 
-// Methods used to retrieve and store data in the database
+// TODO- Write methods used to retrieve and store data in the database
 // `selectAll()`
 // `insertOne()`
 // `updateOne()`
