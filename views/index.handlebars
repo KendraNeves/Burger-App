@@ -1,6 +1,24 @@
-<h1>EatDaBurger!</h1>
+<h1>Eat-Da-Burger!</h1>
+<h4>Enter a burger you're craving then smash that "Submit" button!</h4>
 
        
+
+
+{{!-- column of burgers that have been ordered (but not devoured), needs more refactoring --}}
+<ul>
+  {{#each burgers}}
+    <li>
+      <p>
+        {{this.burger_name}}
+
+        <button class="devour">Devour!</button>
+      </p>
+    </li>
+  {{/each}}
+</ul>
+
+
+
 {{!-- Code that needs to be refactored        --}}
        
         <!-- <h2>Cats that are not sleepy!</h2>
@@ -23,8 +41,7 @@
  {{!-- =============================================================        --}}
 
 
-{{!-- Burger input form and submit button --}}
-<h2>Add a Burger!</h2>
+{{!-- form and submit button --}}
 <form class="create-form">
 
   <div class="form-group">
