@@ -5,16 +5,18 @@ var burger = {
  
   selectAll: () => {
     return orm.selectAll("burgers");
-    
+
   },
    
   create: (newVal) => {
     // call orm.insertOne with the correct values for YOUR burger database
-    orm.insertOne("burgers", "burger_name", newVal);
+    let result = orm.insertOne("burgers", "burger_name", newVal);
+    return result;
   },
 
   update: (objColVals, condition) => {
-    orm.updateOne("burgers", objColVals, condition);
+    let result = orm.updateOne("burgers", objColVals, condition);
+    return result;
   }
 
 }

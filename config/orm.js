@@ -61,6 +61,7 @@ const orm = {
         if (error) {
           throw error;
         }
+        return result;
       });
 
   } 
