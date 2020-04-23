@@ -1,22 +1,6 @@
 var connection = require("../config/connection.js");
 
 
-// TODO- Write methods used to retrieve and store data in the database
-// `selectAll()`
-// `insertOne()`
-// `updateOne()`
-
-//Helper func
-function printQuestionMarks(num) {
-  var arr = [];
-
-  for (var i = 0; i < num; i++) {
-    arr.push("?");
-  }
-
-  return arr.toString();
-}
-
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
   var arr = [];
@@ -60,7 +44,10 @@ const orm = {
     });
   }, 
 
-  updateOne: (table, objColVals, condition, cb) => {  
+  updateOne: (table, objColVals, condition) => {  
+    // An example of objColVals would be (javascript) {devoured: true}
+    // The condition could be (javascript) {burger_name: "Big Mac"}
+    // (SQL) UPDATE burgers SET devoured=true WHERE burger_name="Big Mac"
       let queryString = "UPDATE " + table;
   
       queryString += " SET ";
@@ -73,8 +60,6 @@ const orm = {
         if (error) {
           throw error;
         }
-  
-        cb(result);
       });
 
   } 
