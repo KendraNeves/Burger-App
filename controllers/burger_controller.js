@@ -11,15 +11,16 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-  result = burger.create(
-  [
-   "burger_name", "devoured" 
-  ],
-  [
-    req.body.burger_name, req.body.devoured
-  ],
-  res.json({ id: result.insertId })
-  );
+  let result = burger.create(req.body.burger_name);
+  console.log(result);
+  res.status(200).end();
+});
+
+router.put("/api/burgers/:burger_name", (req, res) => {
+  let condition = "burger_name=" + "'" + req.params.burger_name + "'";
+  let result = burger.update({devoured: true}, condition);
+  console.log(result);
+  res.status(200).end();
 });
 
 // Export routes for server.js to use.
