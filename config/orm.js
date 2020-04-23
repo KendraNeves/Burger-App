@@ -32,6 +32,7 @@ const orm = {
     connection.query(queryString, [tableName], (error, result) => {
       if (error) throw error;
       console.log(result);
+      return result;
     });
   },
 
