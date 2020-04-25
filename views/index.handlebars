@@ -7,6 +7,8 @@
   {{#each burgers}}
     <li>
       {{burger_name}}
+
+      <button class="devour" data-id="{{this.id}}">DEVOUR!</button> 
     </li>
   {{/each}}
 </ul>
