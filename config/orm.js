@@ -26,13 +26,14 @@ function objToSql(ob) {
 
 const orm = {
  
-  selectAll: (tableName) => {
-    let queryString = "SELECT * FROM ??"; 
+  selectAll: function(tableInput, cb) {
+    var queryString = "SELECT * FROM " + tableInput + ";";
     //SELECT * FROM burgers
-    connection.query(queryString, [tableName], (error, result) => {
-      if (error) throw error;
-      console.log(result);
-      return result;
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
     });
   },
 

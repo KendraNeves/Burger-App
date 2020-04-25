@@ -3,9 +3,10 @@ let orm = require("../config/orm.js");
 
 var burger = {
  
-  selectAll: () => {
-    return orm.selectAll("burgers");
-
+  selectAll: (cb) => {
+    orm.selectAll("burgers", function(res){
+      cb(res);
+    });
   },
    
   create: (newVal) => {
@@ -22,7 +23,7 @@ var burger = {
 }
 
 //TESTS
-burger.selectAll()
+// burger.selectAll()
 // burger.create("Bacon Burger");
 // burger.update({devoured: true}, "burger_name='Big Mac'");
 

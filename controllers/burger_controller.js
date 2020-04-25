@@ -4,10 +4,11 @@ var burger = require("../models/burger.js");
 
 
 router.get("/", (req, res) => {
-  let data = burger.selectAll();
-  let hbsObject = {burgers: data};
-  console.log(hbsObject);
-  res.render("index", hbsObject);
+  burger.selectAll(function(data) {
+    var hbsObject = {burgers: data};
+    console.log("HERE" + hbsObject);
+    res.render("index", hbsObject);
+  });
 });
 
 router.post("/api/burgers", (req, res) => {
