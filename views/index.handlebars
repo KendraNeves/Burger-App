@@ -1,50 +1,55 @@
-<h1 class="text-center p-3 mt-5"><em>Indulge</em> in a Burger</h1>
-<h3 class="text-center mb-4">Enter a burger to satisfy your <strong>craving</strong> then click "Submit"</h4>
+<div id="background" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0;"></div>
+<div id="foreground" style="position: absolute; top: 0; right: 0; left: 0;">
 
 
-<div class="container-fluid">     
-  <div class="row">
-  
-    {{!-- <div class="col-m-1"></div> --}}
+
+  <h1 class="text-center p-3 mt-5"><em>Indulge</em> in a Burger</h1>
+  <h3 class="text-center mb-4">Enter a burger you're <strong>craving</strong> then click "Submit"</h4>
+
+
+  <div class="container-fluid mt-5">     
+    <div class="row">
     
-    {{!-- Burger Column  --}}
-    <ul class="col-xs-12 col-md-5 pl-5">
-      <h4>Craving:</h4>
-      {{#each burgers}}
-        {{#unless devoured}}
-          <li>
-            {{burger_name}}
-            <button type="button" class="btn btn-outline-success devour" data-burgername="{{burger_name}}" data-burgerstate="{{devoured}}">Indulge</button> 
-          </li>
-        {{/unless}}
-      {{/each}}
-    </ul>
+      <div class="col-md-1"></div>
+      
+      {{!-- Burger Column  --}}
+      <ul class="col-xs-12 col-md-5 pl-5">
+        <h4>Craving:</h4>
+        {{#each burgers}}
+          {{#unless devoured}}
+            <li>
+              {{burger_name}}
+              <button type="button" class="btn btn-secondary devour" data-burgername="{{burger_name}}" data-burgerstate="{{devoured}}">Indulge</button> 
+            </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
 
-     {{!--Devoured column --}}
-    <ul class="col-xs-12 col-md-5 col-md-offset-2 pr-2" style="background-color: blueviolet;">
-      <h4>Indulged:</h4>
-      {{#each burgers}}
-        {{#if devoured}}
-          <li>
-            {{burger_name}}
-          </li>
-        {{/if}}
-      {{/each}}
-    </ul>
+      {{!--Devoured column --}}
+      <ul class="col-xs-12 col-md-5 col-md-offset-2 pr-5 text-right">
+        <h4>Indulged:</h4>
+        {{#each burgers}}
+          {{#if devoured}}
+            <li>
+              {{burger_name}}
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
 
-    {{!-- <div class="col-m-1"></div> --}}
+      <div class="col-md-1"></div>
 
-  </div>
-</div> 
+    </div>
+  </div> 
 
-{{!-- form and submit button --}}
+  {{!-- form and submit button --}}
+  <form class="create-form form-inline my-2 my-lg-0 justify-content-center">
 
-<form class="create-form form-inline my-2 my-lg-0 justify-content-center">
+    <div class="form-group">
+      <input type="text" id="ca" name="name" class="form-control mr-sm-2" placeholder="Enter burger here">
+    </div>
 
-  <div class="form-group">
-    <input type="text" id="ca" name="name" class="form-control mr-sm-2" placeholder="Enter burger here">
-  </div>
+    <button type="submit" class="btn btn-secondary my-2 my-sm-0">Submit</button>
 
-  <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Submit</button>
-
-</form>
+  </form>
+</div>

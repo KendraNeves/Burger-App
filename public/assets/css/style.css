@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Euphoria+Script&family=Marck+Script&display=swap');
 
-
-
 body {
-  background-image: url(../img/blue-burger.png);
-  background-size: cover;
   font-family: 'Dancing Script', cursive;
+  background-color:  #CFEBEA;
+}
+
+#background {
+  background-image: url(../img/blue-burger.png);
+  background-size: initial;
+  background-repeat:no-repeat;
+  background-position: center;
 }
 
 h1 {
@@ -18,4 +22,19 @@ button {
 
 ul {
   list-style-type: none;
+}
+
+li {
+  line-height: 3;
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 760px){
+  #foreground {
+    background-color: rgba(240, 248, 255, 0.5);
+  } 
 }
