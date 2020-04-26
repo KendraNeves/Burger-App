@@ -1,20 +1,41 @@
-<h1>Eat-Da-Burger!</h1>
-<h4>Enter a burger you're craving then smash that "Submit" button!</h4>
+<h1 class="text-center">Eat-Da-Burger!</h1>
+<h4 class="text-center">Enter a burger you're craving then smash that "Submit" button!</h4>
 
-      
-{{!-- column of burgers that have been ordered (but not devoured), needs more refactoring --}}
-<ul>
-  {{#each burgers}}
-    <li>
-      {{burger_name}}
 
-      <button class="devour" data-id="{{this.id}}">DEVOUR!</button> 
-    </li>
-  {{/each}}
-</ul>
+<div class="container">
+  <div class="row">
+    <img src="/assets/img/blue-burger.png" width="200px" height="200px" alt="burger">
+  </div>
+</div>
+
+<div class="container">     
+  <div class="row">
+  
+    <div class="col-1"></div>
+    
+    {{!-- Burger Column  --}}
+    <ul class="col-5">
+      {{#each burgers}}
+        <li>
+          {{burger_name}}
+
+          <button class="devour" data-id="{{this.id}}">DEVOUR!</button> 
+        </li>
+      {{/each}}
+    </ul>
+
+     {{!--Devoured column --}}
+    <ul class="col-5" style="background-color: blueviolet;">
+
+    </ul>
+
+    <div class="col-1"></div>
+
+  </div>
+</div> 
 
 {{!-- form and submit button --}}
-<form class="create-form">
+<form class="create-form text-center">
 
   <div class="form-group">
     <label for="ca">Enter burger here: </label>

@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+//Event when "submit" button is pressed with new input in form   
 $(".create-form").on("submit", function(event) {
   // Make sure to preventDefault on a submit event.
   event.preventDefault();
@@ -19,6 +20,12 @@ $(".create-form").on("submit", function(event) {
       location.reload();
     }
   );
+});
+
+
+//Event when "devour" button is clicked
+$(".devour").click(function() {
+  alert("Good Job!");
 });
 
 });
