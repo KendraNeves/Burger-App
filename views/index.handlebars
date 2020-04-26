@@ -1,47 +1,50 @@
-<h1 class="text-center">Eat-Da-Burger!</h1>
-<h4 class="text-center">Enter a burger you're craving then smash that "Submit" button!</h4>
+<h1 class="text-center p-3 mt-5"><em>Indulge</em> in a Burger</h1>
+<h3 class="text-center mb-4">Enter a burger to satisfy your <strong>craving</strong> then click "Submit"</h4>
 
 
-<div class="container">
-  <div class="row">
-    <img src="/assets/img/blue-burger.png" width="200px" height="200px" alt="burger">
-  </div>
-</div>
-
-<div class="container">     
+<div class="container-fluid">     
   <div class="row">
   
-    <div class="col-1"></div>
+    {{!-- <div class="col-m-1"></div> --}}
     
     {{!-- Burger Column  --}}
-    <ul class="col-5">
+    <ul class="col-xs-12 col-md-5 pl-5">
+      <h4>Craving:</h4>
       {{#each burgers}}
-        <li>
-          {{burger_name}}
-
-          <button class="devour" data-id="{{this.id}}">DEVOUR!</button> 
-        </li>
+        {{#unless devoured}}
+          <li>
+            {{burger_name}}
+            <button type="button" class="btn btn-outline-success devour" data-burgername="{{burger_name}}" data-burgerstate="{{devoured}}">Indulge</button> 
+          </li>
+        {{/unless}}
       {{/each}}
     </ul>
 
      {{!--Devoured column --}}
-    <ul class="col-5" style="background-color: blueviolet;">
-
+    <ul class="col-xs-12 col-md-5 col-md-offset-2 pr-2" style="background-color: blueviolet;">
+      <h4>Indulged:</h4>
+      {{#each burgers}}
+        {{#if devoured}}
+          <li>
+            {{burger_name}}
+          </li>
+        {{/if}}
+      {{/each}}
     </ul>
 
-    <div class="col-1"></div>
+    {{!-- <div class="col-m-1"></div> --}}
 
   </div>
 </div> 
 
 {{!-- form and submit button --}}
-<form class="create-form text-center">
+
+<form class="create-form form-inline my-2 my-lg-0 justify-content-center">
 
   <div class="form-group">
-    <label for="ca">Enter burger here: </label>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="ca" name="name" class="form-control mr-sm-2" placeholder="Enter burger here">
   </div>
 
-  <button type="submit">Submit</button>
+  <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Submit</button>
 
 </form>

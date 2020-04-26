@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Euphoria+Script&family=Marck+Script&display=swap');
+
+
+
 body {
-  background-color: #CFEBEA;
+  background-image: url(../img/blue-burger.png);
+  background-size: cover;
+  font-family: 'Dancing Script', cursive;
+}
+
+h1 {
+  font-size: 3.5rem
+}
+
+button {
+  font-weight: bolder;
+}
+
+ul {
+  list-style-type: none;
 }

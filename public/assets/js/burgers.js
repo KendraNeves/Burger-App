@@ -9,6 +9,11 @@ $(".create-form").on("submit", function(event) {
     burger_name: $("#ca").val().trim()
   };
 
+  if (newBurger.burger_name === "") {
+    alert("Please enter a burger name");
+    return;
+  }
+
   // Send the POST request.
   $.ajax("/api/burgers", {
     type: "POST",
@@ -24,8 +29,22 @@ $(".create-form").on("submit", function(event) {
 
 
 //Event when "devour" button is clicked
-$(".devour").click(function() {
-  alert("Good Job!");
+
+$(".devour").on("click", function(event) {
+  var burgerName = $(this).data("burgername");
+
+  // Send the PUT request.
+  $.ajax("/api/burgers/" + burgerName, {
+    type: "PUT",
+  }).then(
+    function() {
+      console.log("changed devoured for ", burgerName);
+      // Reload the page to get the updated list
+      location.reload();
+    }
+  );
 });
+
+
 
 });
